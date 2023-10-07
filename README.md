@@ -1,34 +1,40 @@
-# Mintlify Starter Kit
+# Getting started
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+## Welcome !
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+{% hint style="info" %}
+**Good to know:**A design system is a product, and similar best practices to product docs apply when documenting a design system. Offering succinct ways to get started is a great way to introduce the concepts of your design system, while empowering folks to use it for their needs.
+{% endhint %}
 
-### 👩‍💻 Development
+## Installing
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+Our design system is written in React, and can be installed into your project via NPM or Yarn.
 
+{% tabs %}
+{% tab title="npm" %}
+`npm install --save @my-product/my-design-system`
+{% endtab %}
+
+{% tab title="yarn" %}
+`yarn add -S my-design-system`
+{% endtab %}
+{% endtabs %}
+
+## Usage
+
+Import the components you need:
+
+`import {Button, ActionBar} from @my-product/my-design-system`
+
+Then use them in your app or components:
+
+```javascript
+const header = () => (
+    <div>
+        <ActionBar>
+            <Button kind="primary" label="Save" />
+            <Button kind="secondary" label="Cancel" />
+        </ActionBar>
+    </div>
+)
 ```
-npm i -g mintlify
-```
-
-Run the following command at the root of your documentation (where mint.json is)
-
-```
-mintlify dev
-```
-
-### 😎 Publishing Changes
-
-Changes will be deployed to production automatically after pushing to the default branch.
-
-You can also preview changes using PRs, which generates a preview link of the docs.
-
-#### Troubleshooting
-
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
